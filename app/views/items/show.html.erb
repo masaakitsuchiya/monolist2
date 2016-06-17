@@ -1,3 +1,8 @@
+<% content_for :head do %>
+   <title> <%= @item.title %> | Monolist</title>
+   <meta name="description" content="<%= @item.title %>" >
+<% end %>
+
 <div class="container">
   <div class="container-inner inner-sm clearfix">
     <div class="item-single-main">
@@ -22,9 +27,9 @@
         <h4 class="side-box-title">Haveしたユーザー</h4>
         <div class="side-box-body">
           <% # TODO Haveしたユーザー一覧 %>
-          <% @item.have_users.each do |user| %>
-          <%= gravatar_for user, size: 40 %>
-          <% end %>
+          <% #  @item.have_users.each do |user | %>
+          <% #  gravator_for(user, size:24) %>
+          <% #  end %>
 
         </div>
       </div>
