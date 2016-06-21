@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="ranking_title">
+    <h1>Want Ranking Top 10</h1>
+    </div>
+  <div class="container-inner inner-default clearfix">
+    <% @items.each do |item| %>
+      <div class="item-box">
+        <div class="item-rank">
+          <span class="rank_no"><%= (@items.find_index item) + 1 %></span>位
+        </div>
+        <div class="image">
+          <div class="img-wrap">
+            <% if item.large_image.present? %>
+              <%= image_tag(item.large_image , alt: item.title) %>
+            <% else %>
+              <%= image_tag("no-image.png" , alt: item.title) %>
+            <% end %>
+          </div>
+        </div>
+        <div class="detail">
+          <p class="title">
+            <%= item.title %>
+          </p>
+        </div>
+        <%= render 'items/action', item: item if logged_in? %>
+      </div>
+    <% end %>
+  </div>
+</div>
